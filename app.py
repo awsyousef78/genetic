@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
 from genetic_algorithm import run_ga  # تأكد أن run_ga ترجع dict كما شرحنا
-
+# created by aws
 app = Flask(__name__)
 app.secret_key = 'secret'  # مطلوب لتخزين النتائج مؤقتًا
 
