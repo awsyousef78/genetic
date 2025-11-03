@@ -1,0 +1,2 @@
+Best features after GA:
+['age', 'cp', 'fbs', 'restecg', 'exang', 'oldpeak', 'slope', 'ca', 'thal']

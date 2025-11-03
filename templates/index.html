@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <title>Genetic Algorithm Feature Selection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h2>Upload Required Dataset</h2>
+      <form method="post" enctype="multipart/form-data">
+        <!-- منطقة اختيار الملف -->
+        <input type="file" name="dataset" required>
+        <br><br>
+        <!-- زر RUN GA -->
+        <button type="submit">RUN GA</button>
+      </form>
+    </div>
+
+    {% if results %}
+<div class="card" style="margin-top:30px;">
+  <h3>Genetic Algorithm Results</h3>
+  <p><strong>Accuracy Before GA:</strong> {{ results.accuracy_full }}</p>
+  <p><strong>Training Time Before GA:</strong> {{ results.time_full }} Second</p>
+  <p><strong>Accuracy After GA:</strong> {{ results.accuracy_ga }}</p>
+  <p><strong>Number of Features After GA:</strong> {{ results.num_features }}</p>
+  <p><strong>Selected Features:</strong> {{ results.best_features }}</p>
+
+  <h4>Confusion Matrix Before GA</h4>
+  <img src="{{ url_for('static', filename=results.cm_before.split('/')[-1]) }}" alt="CM Before">
+
+  <h4>Confusion Matrix After GA</h4>
+  <img src="{{ url_for('static', filename=results.cm_after.split('/')[-1]) }}" alt="CM After">
+
+  <h4>ROC Curve Before GA</h4>
+  <img src="{{ url_for('static', filename=results.roc_before.split('/')[-1]) }}" alt="ROC Before">
+
+  <h4>ROC Curve After GA</h4>
+  <img src="{{ url_for('static', filename=results.roc_after.split('/')[-1]) }}" alt="ROC After">
+
+  <h4>Accuracy vs Training Time</h4>
+  <img src="{{ url_for('static', filename='train_time_plot.png') }}?{{ results.accuracy_ga }}" 
+       alt="Plot">
+</div>
+{% endif %}
+
+  </div>
+</body>
+</html>

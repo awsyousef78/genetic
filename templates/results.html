@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GA Results</title>
+</head>
+<body>
+    <h1>نتائج الخوارزمية الجينية</h1>
+
+    <h2>قبل GA (جميع الميزات)</h2>
+    <p><b>الدقة:</b> {{ results['accuracy_full'] }}</p>
+    <p><b>وقت التدريب:</b> {{ results['time_full'] }} ثواني</p>
+
+    <h2>بعد GA (الميزات المختارة)</h2>
+    <p><b>أفضل الميزات:</b> {{ results['best_features'] }}</p>
+    <p><b>الدقة:</b> {{ results['accuracy_ga'] }}</p>
+    <p><b>عدد الميزات:</b> {{ results['num_features'] }}</p>
+
+    <h2>تأثير تقليل الميزات على وقت التدريب</h2>
+    <img src="{{ results['plot_path'] }}" alt="Training Time Plot" width="700">
+
+    <br><br>
+    <a href="/">عودة</a>
+</body>
+</html>

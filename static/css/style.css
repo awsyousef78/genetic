@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #ffffff, #87CEFA);
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.card h2, .card h3, .card h4 {
+    margin: 10px 0;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+button {
+    padding: 12px 25px;
+    margin-top: 15px;
+    background: linear-gradient(to right, #1E90FF, #00BFFF);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #00BFFF, #1E90FF);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+.card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.card img {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
